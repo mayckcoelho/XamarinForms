@@ -6,13 +6,18 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout>
-                <Button Text="Activity Indicator" Clicked="GoActivityIndicatorPage"/>
-                <Button Text="Progress Bar" Clicked="GoProgressBarPage"/>
-                <Button Text="Box View" Clicked="GoBoxViewPage"/>
+                <Button Text="ActivityIndicator" Clicked="GoActivityIndicatorPage"/>
+                <Button Text="ProgressBar" Clicked="GoProgressBarPage"/>
+                <Button Text="BoxView" Clicked="GoBoxViewPage"/>
                 <Button Text="Label" Clicked="GoLabelPage"/>
                 <Button Text="Button" Clicked="GoButtonPage"/>
-                <Button Text="Entry Editor" Clicked="GoEntryEditorPage"/>
+                <Button Text="Entry/Editor" Clicked="GoEntryEditorPage"/>
                 <Button Text="DatePicker" Clicked="GoDatePickerPage"/>
+                <Button Text="TimePicker" Clicked="GoTimePickerPage"/>
+                <Button Text="Picker" Clicked="GoPickerPage"/>
+                <Button Text="ShearchBar" Clicked="GoSearchBarPage"/>
+                <Button Text="Slider/Stepper" Clicked="GoSliderStepperPage"/>
+                <Button Text="Switch" Clicked="GoSwitchPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
