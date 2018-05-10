@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.ImagePage">
+    <ContentPage.Content>
+        <StackLayout x:Name="Container">
+            <!-- Resource, Local, Internet -->
+            <Image
+                Source="http://st22consulting.id/wp-content/uploads/2018/01/Logo_fanta.png"
+                Aspect="Fill"
+                IsOpaque="True"
+                x:Name="ImageOne"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
