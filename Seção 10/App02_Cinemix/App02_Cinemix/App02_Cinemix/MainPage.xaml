@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App02_Cinemix"
+             x:Class="App02_Cinemix.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Style="{StaticResource Cabecalho}">
+                    <Label Text="CINEMIX" Style="{StaticResource TituloApp}"/>
+                    <Label Text="seu app de cinema" Style="{StaticResource SubtituloApp}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Conteudo}">
+                    <Label Text="Lançamento" Style="{StaticResource Lancamento}"/>
+                    <Label Text="Pantera Negra" Style="{StaticResource TituloFilme}"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="Fundo.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Fundo}"/>
+                        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Image Source="Poster.png" Style="{StaticResource Poster}"/>
+
+                            <Label x:Name="Sinopse" Style="{StaticResource Sinopse}"/>
+
+                            <StackLayout Style="{StaticResource Horarios}">
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30" TextColor="#FFFFFF"/>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30" TextColor="#FFFFFF"/>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30" TextColor="#FFFFFF"/>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource Horario}">
+                                    <Label Text="10:30" TextColor="#FFFFFF"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <Image Source="FundoValor.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+                        <StackLayout HorizontalOptions="End" Grid.Row="1" Grid.Column="0" Spacing="0" Padding="10">
+                            <Label Text="MEIA" Style="{StaticResource SubtituloApp}"/>
+                            <Label Text="R$ 15,00" Style="{StaticResource TituloApp}"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" Spacing="0" Padding="10">
+                            <Label Text="INTEIRA" Style="{StaticResource SubtituloApp}"/>
+                            <Label Text="R$ 30,00" Style="{StaticResource TituloApp}"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App02_Cinemix.App">
+	<Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="CorFundo">#6A34B0</Color>
+            <Color x:Key="CorClara">#947AC4</Color>
+
+            <Style x:Key="Cabecalho" TargetType="StackLayout">
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Spacing" Value="0"/>
+            </Style>
+            <Style x:Key="Conteudo" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource CorFundo}"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+            <Style x:Key="Horario" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource CorClara}"/>
+                <Setter Property="Padding" Value="15, 7"/>
+            </Style>
+            <Style x:Key="Horarios" TargetType="StackLayout">
+                <Setter Property="Spacing" Value="20"/>
+                <Setter Property="Margin" Value="0, 0, 0, 10"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+            </Style>
+
+            <Style x:Key="Titulo" TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="TextColor" Value="{StaticResource CorFundo}"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+            <Style x:Key="TituloApp" TargetType="Label" BaseResourceKey="Titulo">
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+            <Style x:Key="SubtituloApp" TargetType="Label" BaseResourceKey="Titulo">
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            <Style x:Key="Lancamento" TargetType="Label" BaseResourceKey="SubtituloApp">
+                <Setter Property="TextColor" Value="{StaticResource CorClara}"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+            </Style>
+            <Style x:Key="TituloFilme" TargetType="Label" BaseResourceKey="SubtituloApp">
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS" Value="24"/>
+                            <On Platform="UWP" Value="64"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="Sinopse" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="460"/>
+                <Setter Property="Margin" Value="0, 10, 0, 0"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="TextColor" Value="{StaticResource CorClara}"/>
+            </Style>
+
+            <Style x:Key="Fundo" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+            <Style x:Key="Poster" TargetType="Image">
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android, iOS" Value="0, 50, 0, 0"/>
+                            <On Platform="UWP" Value="0, 20, 0, 0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+            </Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>
