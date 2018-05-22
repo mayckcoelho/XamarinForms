@@ -1,4 +1,5 @@
-﻿using App01_Vagas.Modelos;
+﻿using App01_Vagas.Banco;
+using App01_Vagas.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,23 @@ using Xamarin.Forms.Xaml;
 namespace App01_Vagas.Paginas
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ConsultaVagas : ContentPage
+	public partial class ConsultarVagas : ContentPage
 	{
-		public ConsultaVagas ()
+        private List<Vaga> Lista { get; set; }
+
+		public ConsultarVagas ()
 		{
 			InitializeComponent ();
+
+            DataBase dataBase = new DataBase();
+            Lista = dataBase.Consultar();
+            ListaVagas.ItemsSource = Lista;
+            lblCount.Text = Lista.Count + " vaga(s) encontrada(s)";
 		}
 
         private void GoCadastro(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CadastroVagas());
+            Navigation.PushAsync(new CadastrarVaga());
         }
 
         private void GoMinhasVagas(object sender, EventArgs e)
@@ -32,7 +40,12 @@ namespace App01_Vagas.Paginas
         {
             Label lblDetalhe = sender as Label;
             var vaga = ((TapGestureRecognizer)lblDetalhe.GestureRecognizers[0]).CommandParameter as Vaga;
-            Navigation.PushAsync(new DetalheVagas(vaga));
+            Navigation.PushAsync(new DetalharVaga(vaga));
+        }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListaVagas.ItemsSource = Lista.Where(a => a.NomeVaga.ToLower().Contains(e.NewTextValue.ToLower())).ToList();
         }
     }
 }

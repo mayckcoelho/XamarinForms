@@ -11,11 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace App01_Vagas.Paginas
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DetalheVagas : ContentPage
+	public partial class DetalharVaga : ContentPage
 	{
-		public DetalheVagas (Vaga vaga)
+		public DetalharVaga (Vaga vaga)
 		{
 			InitializeComponent ();
+            BindingContext = vaga;
 		}
 	}
 }

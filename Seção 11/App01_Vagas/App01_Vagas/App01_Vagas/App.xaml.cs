@@ -11,7 +11,7 @@ namespace App01_Vagas
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new Paginas.ConsultaVagas());
+            MainPage = new NavigationPage(new Paginas.ConsultarVagas());
 		}
 
 		protected override void OnStart ()
