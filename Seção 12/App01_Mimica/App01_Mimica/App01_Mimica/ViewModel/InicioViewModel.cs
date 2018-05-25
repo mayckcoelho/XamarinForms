@@ -32,7 +32,7 @@ namespace App01_Mimica.ViewModel
             string erro = string.Empty;
             if (Jogo.TempoPalavra < 10)
                 erro += "O tempo mínimo para o tempo da palavra é 10 segundos.";
-            if (Jogo.TempoPalavra <= 0)
+            if (Jogo.Rodadas <= 0)
                 erro += "O valor mínimo para a rodada é 1.";
 
             if (erro.Length > 0)

@@ -14,10 +14,11 @@ namespace App01_Mimica.ViewModel
         private string _textoContagem;
 
         private bool _isVisibleContainerContagem;
-        private bool _isVisibleContainerIniciar;
+        private bool _isVisibleBtnIniciar;
         private bool _isVisibleBtnMostrar;
 
         public Grupo Grupo { get; set; }
+        public string NumeroGrupo { get; set; }
 
         public byte PalavraPontuacao
         {
@@ -40,10 +41,10 @@ namespace App01_Mimica.ViewModel
             get { return _isVisibleContainerContagem; }
             set { _isVisibleContainerContagem = value; OnPropertyChanged(nameof(IsVisibleContainerContagem)); }
         }
-        public bool IsVisibleContainerIniciar
+        public bool IsVisibleBtnIniciar
         {
-            get { return _isVisibleContainerIniciar; }
-            set { _isVisibleContainerIniciar = value; OnPropertyChanged(nameof(IsVisibleContainerIniciar)); }
+            get { return _isVisibleBtnIniciar; }
+            set { _isVisibleBtnIniciar = value; OnPropertyChanged(nameof(IsVisibleBtnIniciar)); }
         }
         public bool IsVisibleBtnMostrar
         {
@@ -61,9 +62,13 @@ namespace App01_Mimica.ViewModel
         public JogoViewModel(Grupo grupo)
         {
             Grupo = grupo;
+            if (grupo == Data.Data.Jogo.Grupo1)
+                NumeroGrupo = "Grupo 1 ";
+            else
+                NumeroGrupo = "Grupo 2 ";
 
             IsVisibleContainerContagem = false;
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleBtnMostrar = true;
 
             Palavra = "**********";
@@ -100,19 +105,20 @@ namespace App01_Mimica.ViewModel
 
             PropertyChanged(this, new PropertyChangedEventArgs(nameof(Palavra)));
             IsVisibleBtnMostrar = false;
-            IsVisibleContainerIniciar = true;
+            IsVisibleBtnIniciar = true;
         }
 
         private void IniciarAction()
         {
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleContainerContagem = true;
 
             // TODO - quando o tempo terminar, parar a contagem
             int i = Data.Data.Jogo.TempoPalavra;
+            TextoContagem = i.ToString();
             Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                TextoContagem = i.ToString();
                 i--;
+                TextoContagem = i.ToString();
 
                 if (i < 0)
                     TextoContagem = "Esgotou o tempo";

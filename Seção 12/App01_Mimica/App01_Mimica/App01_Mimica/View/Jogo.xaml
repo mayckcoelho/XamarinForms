@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cab="clr-namespace:App01_Mimica.View.Util"
              xmlns:conv="clr-namespace:App01_Mimica.View.Util"
              x:Class="App01_Mimica.View.Jogo">
     <ContentPage.Resources>
@@ -9,27 +10,34 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Nome: "/>
-                    <Label Text="{Binding Grupo.Nome}"/>
-                </StackLayout>
-                <Label Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"/>
-                <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand"/>
-                <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarBalavra}"/>
-            </StackLayout>
-            <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
-                <Label Text="{Binding TextoContagem}" FontSize="100" HorizontalOptions="CenterAndExpand"/>
-                <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Spacing="0">
+            <cab:Cabecalho/>
+            <StackLayout Style="{StaticResource Container}">
+                <Frame>
+                    <StackLayout Style="{StaticResource ContainerEspecial}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding NumeroGrupo} "/>
+                            <Label Text="{Binding Grupo.Nome}"/>
+                        </StackLayout>
+                        
+                        <Label Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"/>
+                        <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand" FontSize="100"/>
+                        <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarBalavra}"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <StackLayout IsVisible="{Binding IsVisibleContainerContagem}" VerticalOptions="FillAndExpand">
+                        <Label Text="{Binding TextoContagem}" FontSize="100" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
 
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Acertou" BackgroundColor="Green" TextColor="White"  Command="{Binding Acertou}"/>
-                    <Button Text="Errou" BackgroundColor="Orange" TextColor="White"  Command="{Binding Errou}"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Acertou" HorizontalOptions="Center" BackgroundColor="Green" TextColor="White"  Command="{Binding Acertou}"/>
+                            <Button Text="Errou" HorizontalOptions="Center" BackgroundColor="Orange" TextColor="White"  Command="{Binding Errou}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Button Text="Iniciar" Command="{Binding Iniciar}" IsVisible="{Binding IsVisibleBtnIniciar}" />
                 </StackLayout>
-            </StackLayout>
-            <StackLayout IsVisible="{Binding IsVisibleContainerIniciar}">
-                <Button Text="Iniciar" Command="{Binding Iniciar}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
