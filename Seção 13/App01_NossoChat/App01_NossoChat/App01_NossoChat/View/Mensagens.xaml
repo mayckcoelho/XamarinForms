@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_NossoChat.View.Mensagens">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="10">
+            <ScrollView>
+                <StackLayout x:Name="SLMensagemContainer">
+                    <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
+                        <StackLayout>
+                            <Label Text="Felipe123" FontSize="10" TextColor="#5ED055"/>
+                            <Label Text="Olá amigos tudo bem?" TextColor="#5ED055"/>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Padding="5" BackgroundColor="#5ED055"  HorizontalOptions="End">
+                        <Label Text="Olá mundo!" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Digite sua mensagem" PlaceholderColor="LightGray" BackgroundColor="White" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
