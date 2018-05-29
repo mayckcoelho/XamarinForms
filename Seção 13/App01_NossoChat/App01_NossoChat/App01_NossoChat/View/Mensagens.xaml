@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App01_NossoChat.View.Mensagens">
+             x:Class="App01_NossoChat.View.Mensagens"
+             Title="NossoChat">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar" Icon="refresh.png" Command="{Binding Atualizar}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="10">
-            <ScrollView>
+            <ScrollView VerticalOptions="FillAndExpand">
                 <StackLayout x:Name="SLMensagemContainer">
                     <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
                         <StackLayout>
@@ -18,8 +22,8 @@
                 </StackLayout>
             </ScrollView>
             <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Digite sua mensagem" PlaceholderColor="LightGray" BackgroundColor="White" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
+                <Entry Placeholder="Digite sua mensagem" PlaceholderColor="LightGray" BackgroundColor="White" HorizontalOptions="FillAndExpand" Text="{Binding TxtMensagem}"/>
+                <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White" Command="{Binding BtnEnviar}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

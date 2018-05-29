@@ -45,7 +45,10 @@ namespace App01_NossoChat.ViewModel
         private void GoPaginaMensagem(Chat chat)
         {
             if (chat != null)
+            {
+                SelectedChat = null;
                 ((NavigationPage)App.Current.MainPage).PushAsync(new View.Mensagens(chat));
+            }
         }
 
         private void AtualizarAction()
