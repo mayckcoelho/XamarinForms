@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App02"
+             x:Class="App02.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SeletorTemplate x:Key="SelectorPessoa"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <!-- <ListView x:Name="ListaFuncionarios" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Titulo}" GroupShortNameBinding="{Binding TituloCurto}"> -->
+        <ListView x:Name="ListaFuncionarios" IsGroupingEnabled="True" ItemTemplate="{StaticResource SelectorPessoa}">
+            <ListView.Header>
+                <Label Text="Header!"  HorizontalOptions="Center"/>
+            </ListView.Header>
+
+            <ListView.Footer>
+                <Label Text="Footer!"  HorizontalOptions="Center"/>
+            </ListView.Footer>
+            
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Spacing="5" Padding="5">
+                            <Label Text="{Binding Titulo}"/>
+                            <Label Text="{Binding Descricao}" FontSize="10" TextColor="Gray"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Spacing="5" Padding="10">
+                            <Label Text="{Binding Nome}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
