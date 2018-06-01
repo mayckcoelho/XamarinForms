@@ -11,7 +11,8 @@ namespace App01_NossoChat.Util
     {
         public static void SetUsuarioLogado(Usuario usuario)
         {
-
+            if (usuario != null)
+                App.Current.Properties.Add("LOGIN", JsonConvert.SerializeObject(usuario));
         }
 
         public static Usuario GetUsuarioLogado()

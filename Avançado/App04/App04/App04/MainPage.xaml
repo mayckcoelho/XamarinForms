@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App04"
+             xmlns:custom="clr-namespace:App04.Customs"
+             x:Class="App04.MainPage">
+
+    <StackLayout x:Name="Container">
+        <!-- Place new controls here -->
+    	<Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="Center" />
+
+        <custom:MyButton Text="Eu sou Super Diferente!"/>
+    </StackLayout>
+
+</ContentPage>
