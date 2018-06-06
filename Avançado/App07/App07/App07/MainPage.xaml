@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App07"
+             x:Class="App07.MainPage">
+
+    <StackLayout x:Name="Container">
+        <StackLayout.BackgroundColor>
+            <OnIdiom x:TypeArguments="Color" Tablet="Aqua"/>
+        </StackLayout.BackgroundColor>
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+            <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="Android" Value="20"/>
+                    <On Platform="iOS, WinPhone" Value="60"/>
+                </OnPlatform>
+            </Label.FontSize>
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="Android" Value="Green"/>
+                    <On Platform="iOS, WinPhone" Value="Red"/>
+                </OnPlatform>
+            </Label.TextColor>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
