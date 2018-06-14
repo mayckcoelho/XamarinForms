@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-namespace App01_NossoChat
+namespace App13
 {
 	public partial class App : Application
 	{
@@ -11,12 +11,11 @@ namespace App01_NossoChat
 		{
 			InitializeComponent();
 
-			MainPage = new View.PaginaInicial();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
 		{
-            var prop = this.Properties;
 			// Handle when your app starts
 		}
 
