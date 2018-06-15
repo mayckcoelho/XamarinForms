@@ -16,8 +16,8 @@ namespace App_Atelie.Model
         [Key]
         public virtual TKey Id
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
         [NotMapped]
@@ -27,12 +27,5 @@ namespace App_Atelie.Model
             set { _entityState = value; }
         }
         #endregion
-
-        public static bool ValidateDataAnnotations<T>(this T entity, out ICollection<ValidationResult> results)
-        {
-            var context = new ValidationContext(entity, serviceProvider: null, items: null);
-            results = new List<ValidationResult>();
-            return Validator.TryValidateObject(entity, context, results, validateAllProperties: true);
-        }
     }
 }

@@ -15,8 +15,6 @@ namespace App_Atelie.DataAccess
         TEntity Get(TKey id);
         IEnumerable<TEntity> GetMany(IEnumerable<TKey> Keys);
         IEnumerable<TEntity> GetAll();
-
-        IQueryable<TEntity> AsQueryable();
         #endregion Methods
     }
 }
