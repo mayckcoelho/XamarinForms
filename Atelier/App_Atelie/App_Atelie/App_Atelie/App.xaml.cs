@@ -11,7 +11,7 @@ namespace App_Atelie
 		{
 			InitializeComponent();
 
-			MainPage = new View.MainPage();
+			MainPage = new NavigationPage(new View.Principal());
 		}
 
 		protected override void OnStart ()

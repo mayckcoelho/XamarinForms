@@ -22,8 +22,20 @@ namespace App_Atelie.DataAccess
             optionsBuilder.UseSqlite($"Filename={dbPath}");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            this.MapRelations(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private void MapRelations(ModelBuilder modelBuilder)
+        {
+            // Pedido
+            modelBuilder.Entity<Pedido>().Property(p => p.IdCliente);
+            modelBuilder.Entity<Pedido>().HasOne(p => p.Cliente).WithMany(p => p.Pedidos).HasForeignKey(p => p.IdCliente);
+        }
+
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<Medida> Medida { get; set; }
     }
 }

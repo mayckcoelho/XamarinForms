@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Atelie.Custom.CustomCardView">
+    <ContentView.Content>
+        <Frame IsClippedToBounds="True" HasShadow="True" CornerRadius="0" BackgroundColor="White" Margin="7" Padding="10">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" x:Name="icone" Source="add.png" Margin="10"/>
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label x:Name="titulo" Text="Mayck (R$ 30,00)"/>
+                        <Label x:Name="subtitulo" Text="18/03/2018"/>
+                    </StackLayout>
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="search.png" Margin="10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Falta 1 dia" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Editar"/>
+                    <Label Text="A"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

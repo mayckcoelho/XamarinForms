@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Blend for Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App_Atelie.Android", "App_Atelie\App_Atelie.Android\App_Atelie.Android.csproj", "{FAB1A234-8EFA-472C-8E45-B89C68F0A00C}"

@@ -32,7 +32,7 @@ namespace App_Atelie.DataAccess
             }
         }
 
-        private bool TryValidate(TEntity Entity, out List<ValidationResult> results)
+        public bool TryValidate(TEntity Entity, out List<ValidationResult> results)
         {
             var context = new ValidationContext(Entity, serviceProvider: null, items: null);
             results = new List<ValidationResult>();
@@ -73,6 +73,11 @@ namespace App_Atelie.DataAccess
         public IEnumerable<TEntity> GetAll()
         {
             return _context.Set<TEntity>().AsNoTracking().AsEnumerable();
+        }
+
+        public IQueryable<TEntity> GetQuery()
+        {
+            return _context.Set<TEntity>().AsNoTracking().AsQueryable();
         }
         #endregion
 

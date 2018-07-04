@@ -12,10 +12,6 @@ namespace App_Atelie.Model
             this.Pedidos = new HashSet<Pedido>(); 
         }
 
-        public virtual Medida MedidaPadrao { get; set; }
-
-        public int IdMedidaPadrao { get; set; }
-
         public string Nome { get; set; }
 
         public string Telefone { get; set; }
